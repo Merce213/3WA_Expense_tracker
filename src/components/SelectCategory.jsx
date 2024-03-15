@@ -1,17 +1,24 @@
-import { useState } from "react";
-const SelectCategory = () => {
-	const [value, setValue] = useState("");
+import { categoryData } from "../libs/categoryData";
 
-	const handleChange = (e) => {
-		setValue(e.target.value);
-	};
-
+const SelectCategory = ({ name, value, onChange }) => {
 	return (
-		<select name={"select"} value={value} onChange={handleChange}>
-			<option value={"banane"}>Banane</option>
-			<option value={"poire"}>Poire</option>
-			<option value={"fraise"}>Fraises</option>
-			<option value={"pommes"}>Pommes</option>
+		<select
+			name={name}
+			value={typeof value === "object" ? JSON.stringify(value) : value}
+			onChange={onChange}
+		>
+			<option value={""}>--Choisir une catégorie--</option>
+			{categoryData.map((category) => (
+				<option
+					key={category.id}
+					value={JSON.stringify({
+						id: category.id,
+						name: category.name,
+					})}
+				>
+					{category.name}
+				</option>
+			))}
 		</select>
 	);
 };
