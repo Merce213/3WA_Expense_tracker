@@ -3,7 +3,8 @@ import { useReducer } from "react";
 const initialState = {
 	name: "",
 	amount: "",
-	category: {},
+	category: "",
+	selectedCategory: "",
 	expenses: [],
 	error: "",
 };
@@ -14,6 +15,24 @@ const expenseReducer = (state, action) => {
 			return {
 				...state,
 				[action.payload.name]: action.payload.value,
+				error: "",
+			};
+
+		case "ADD_EXPENSE":
+			return {
+				...state,
+				expenses: [
+					...state.expenses,
+					{
+						id: Date.now(),
+						name: state.name,
+						amount: state.amount,
+						category: state.category,
+					},
+				],
+				name: "",
+				amount: "",
+				category: "",
 				error: "",
 			};
 

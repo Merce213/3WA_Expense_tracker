@@ -1,14 +1,16 @@
 import AddExpense from "./components/AddExpense";
+import DisplayExpense from "./components/DisplayExpense";
 
 const App = () => {
 	return (
-		<div>
-			<h1>Expense Tracker</h1>
+		<main className="w-full min-h-[100dvh]">
+			<h1 className="text-center text-3xl pt-10">Expense Tracker</h1>
 
-			<div>
+			<div className="container flex mx-auto">
 				<AddExpense />
+				<DisplayExpense />
 			</div>
-		</div>
+		</main>
 	);
 };
 
