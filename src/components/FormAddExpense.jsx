@@ -91,36 +91,3 @@ const FormAddExpense = () => {
 };
 
 export default FormAddExpense;
-/* 
-<form onSubmit={handleSubmit} className="flex flex-col gap-5">
-	<label className="">
-		Catégorie:
-		<SelectCategory
-			name={"category"}
-			value={state.category}
-			onChange={handleChange}
-		/>
-	</label>
-	<label className="">
-		Nom:
-		<input
-			type="text"
-			value={state.name}
-			onChange={handleChange}
-			name="name"
-		/>
-	</label>
-	<label className="">
-		Montant:
-		<input
-			type="number"
-			value={state.amount}
-			onChange={handleChange}
-			name="amount"
-		/>
-	</label>
-	<button type="submit" className="bg-blue-500 text-white py-3 rounded-lg">
-		Ajouter
-	</button>
-</form>
- */
